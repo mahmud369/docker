@@ -32,6 +32,10 @@ Check status:
 ```bash
 sudo systemctl status docker
 ```
+(_Optional_) Install Docker Compose:
+```bash
+sudo apt install docker-compose
+```
 
 ### Create a 'Dockerfile'
 Below is an example Dockerfile content for PHP 7.4 and Apache. Copy and save in a file named 'Dockerfile', in the desired application's directory.
@@ -114,4 +118,9 @@ sudo docker export <container-id> > docker_image_file.tar
 (_Optional_) Compress to comparatively lower size file
 ```bash
 gzip php_date_app_image.tar
+```
+
+Using 'docker-compose.yml' file, create Docker images and run respective Docker containers for multi container applications by running below command:
+```bash
+sudo docker-compose up -d
 ```
