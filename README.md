@@ -6,6 +6,10 @@ Practicing Docker from Novice to Expert.
 ### Install and Use Docker on Ubuntu 20.04
 [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
 
+[https://medium.com/@miladev95/dockerizing-a-php-application-e3c756670336](https://medium.com/@miladev95/dockerizing-a-php-application-e3c756670336)
+
+[https://alysivji.github.io/php-mysql-docker-containers.html](https://alysivji.github.io/php-mysql-docker-containers.html)
+
 ### Only installation commands (Ubuntu, Linux)
 Run below commands One-by-one:
 ```bash
