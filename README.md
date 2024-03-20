@@ -109,6 +109,16 @@ Start an exited(stopped) Docker container
 sudo docker start <container-id>
 ```
 
+Remove one or more Docker container(s):
+```bash
+sudo docker rm <container-id-1> <container-id-2> ...
+```
+
+Remove one or more Docker image(s):
+```bash
+sudo docker rmi <image-id-1> <image-id-2> ...
+```
+
 Access into Docker container shell
 ```bash
 sudo docker exec -it <container-id> bash
