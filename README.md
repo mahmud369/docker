@@ -41,7 +41,10 @@ sudo systemctl status docker
 sudo apt install docker-compose
 ```
 
-### Create a 'Dockerfile'
+## A very simple Example
+The following is a very simple example of, how to run a PHP project in a Docker container. [__NOTE__: The source code can be found in the '__basic_docker_php__' folder of this repository.]
+
+### Create a 'Dockerfile':
 Below is an example Dockerfile content for PHP 7.4 and Apache. Copy and save in a file named 'Dockerfile', in the desired application's directory.
 ```docker
 # Use an official PHP runtime as a parent image
@@ -66,9 +69,9 @@ CMD ["apache2-foreground"]
 ```
 
 ### Build the Docker Image:
-Navigate to the application’s directory and run below command. Replace <image-name> with a suitable image name.
+Navigate to the application’s directory and run below command. Replace [image-name] with a suitable image name.
 ```bash
-docker build -t <image-name> .
+docker build -t [image-name] .
 ```
 
 ### Run the Docker Container:
