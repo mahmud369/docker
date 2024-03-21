@@ -129,7 +129,7 @@ sudo docker exec -it <container-id> bash
 
 Export a Docker image and physically save
 ```bash
-sudo docker export <container-id> > docker_image_file.tar
+sudo docker export [container-id] > docker_image_file.tar
 ```
 
 (_Optional_) Compress to comparatively lower size file
