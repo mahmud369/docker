@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_docker
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: db_cake_app
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+    ports:
+      - "5506:3306"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cakephp_docker
+    depends_on:
+      - db
+    ports:
+      - "8085:80"
+    volumes:
+      - ./cake_app:/var/www/html
+    stdin_open: true
+    tty: true
