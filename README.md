@@ -104,27 +104,37 @@ sudo docker ps -f "status=exited"
 
 Stop a running Docker container
 ```bash
-sudo docker stop <container-id>
+sudo docker stop [container-id]
 ```
 
 Start an exited(stopped) Docker container
 ```bash
-sudo docker start <container-id>
+sudo docker start [container-id]
 ```
 
 Remove one or more Docker container(s):
 ```bash
-sudo docker rm <container-id-1> <container-id-2> ...
+sudo docker rm [container-id-1] [container-id-2] ...
 ```
 
 Remove one or more Docker image(s):
 ```bash
-sudo docker rmi <image-id-1> <image-id-2> ...
+sudo docker rmi [image-id-1] [image-id-2] ...
 ```
 
 Access into Docker container shell
 ```bash
-sudo docker exec -it <container-id> bash
+sudo docker exec -it [container-id] bash
+```
+
+Copy a file from host machine to Docker container
+```bash
+sudo docker cp foo.txt [container-id]:/foo.txt
+```
+
+Copy a file from Docker container to host machine
+```bash
+sudo docker cp [container-id]:/foo.txt foo.txt
 ```
 
 Export a Docker image and physically save
