@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./laravel_app:/var/www/html
+    networks:
+      - laravel-network
+
+  db:
+    image: mysql:8.0
+    container_name: laravel_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - laravel-network
+
+  node:
+    image: node:18
+    container_name: laravel_node
+    restart: unless-stopped
+    working_dir: /var/www/html
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./laravel_app:/var/www/html
+    command: sh -c "npm install && npm run dev -- --host"
+    networks:
+      - laravel-network
+
+volumes:
+  dbdata:
+
+networks:
+  laravel-network:
+    driver: bridge
